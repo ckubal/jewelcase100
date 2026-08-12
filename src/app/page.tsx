@@ -140,6 +140,36 @@ export default function Home() {
           className="text-center mt-4 text-xs"
           style={{ color: 'rgba(23,21,20,0.55)', fontFamily: 'Verdana, Tahoma, sans-serif' }}
         >
+          {/* The still is the default and the animation is opt-in: autoplay
+              can't be called off from CSS, so the honest way round is to
+              switch the video on only when motion is welcome. */}
+          <a
+            href="https://weirdlittleideas.com"
+            aria-label="weird little ideas"
+            className="mb-3 inline-block leading-none"
+          >
+            <img
+              src="/wli-guy.jpg"
+              width={200}
+              height={112}
+              alt="weird little ideas"
+              loading="lazy"
+              className="w-[200px] h-auto rounded-[10px] border border-[#3a4a6b]/25 motion-safe:hidden"
+            />
+            <video
+              width={200}
+              height={112}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden="true"
+              poster="/wli-guy.jpg"
+              className="hidden w-[200px] h-auto rounded-[10px] border border-[#3a4a6b]/25 motion-safe:inline-block"
+            >
+              <source src="/wli-guy.mp4" type="video/mp4" />
+            </video>
+          </a>
           <div>all killer, no filler.</div>
           <div className="mt-0.5">
             made in a teenage bedroom · a{' '}
